@@ -1,0 +1,46 @@
+.twoCertificates{
+	display:flex;
+	justify-content: center;
+	flex: wrap;
+}
+
+
+
+ .certificates  {
+    border-radius: 5px;
+    border: 1px solid #C5CAD3;
+    background-color: #fff;
+    min-width: 300px;
+    margin: 15px;
+    /* padding: inherit; */
+   
+}
+.certiFicate{
+	padding:20px;
+}
+
+.title {
+    color: #fff;
+	background: linear-gradient(45deg, #E91125, #000);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.card{
+    border-radius: 0px;
+}
+
+.card-body{
+	padding: 20px;
+}
+
+.validTo
+{
+	color:green;
+}
+
