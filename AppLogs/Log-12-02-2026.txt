@@ -10,3 +10,9 @@
 [2026-02-12 19:38:16] Unexpected error in ACK download: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
 [2026-02-12 19:38:16] NPCI SFTP ACK Download Process Completed
 [2026-02-12 19:38:16] ...........ACK Process End..........
+[2026-02-12 19:38:21] ...........ACK Process Start..........
+[2026-02-12 19:38:21] Connected to NPCI SFTP for ACK Download at 07:38:21 pm
+[2026-02-12 19:38:21] Downloaded Successfully: ACH-CR-UBIN-UBIN612205-19012026-GLT424001-R2222222222C2-01-ACK.xml
+[2026-02-12 19:38:21] Unexpected error in ACK download: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+[2026-02-12 19:38:21] NPCI SFTP ACK Download Process Completed
+[2026-02-12 19:38:21] ...........ACK Process End..........
