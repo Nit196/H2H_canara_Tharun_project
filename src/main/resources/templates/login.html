@@ -1,0 +1,153 @@
+<!--<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="#">
+<title>H2H</title>
+<link rel="shortcut icon" th:href="@{/H2H/image/logo-1408.png}" type="image/x-icon"> 
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/login.css}" rel="stylesheet">
+ <link th:href="@{/fonts/fontawesome-webfont.ttf}" rel="stylesheet"> 
+</head>
+<body>
+	<section>
+		<header class="header">
+			 logo 
+			<div class="header-content">
+				<div>
+					<img src="/image/Ad-H2H.png"
+						alt="Ad-NACH (National Automated Clearing House)"
+						title="Ad-H2H (HOST TO HOST)" class="img-fluid" width="65%">
+				</div>
+			</div>
+		</header>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="center-content">
+				<form class="form-signin" th:action="@{/login}" method="post">
+					<div class="mb-3">
+						<h2 class="form-signin-heading signinHeading text-center">Login</h2>
+
+						
+						<label for="inputEmail" class="form-label signinHeading">Username</label>
+						<input type="text" id="inputEmail" name="username" class="form-control"
+							placeholder="Username" required autofocus />
+					</div>
+
+					<div class="mb-3">
+						<label for="inputPassword" class="form-label signinHeading">Password</label> <input
+							type="password" id="inputPassword" name="password"
+							class="form-control" placeholder="Password" autocomplete="off" required />
+					</div>
+
+					 <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="rememberMe" value="true"/> Remember me
+                </label>
+            </div> 
+
+					 <div class="mb-3 form-check">
+						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label signinHeading" for="exampleCheck1">Remember me</label>
+					</div> 
+
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+					 
+				</form>
+				
+				 <div class="error-message" id="errorMessage" th:if="${error != null}" style="background-color: blue; color: red; padding: 10px;border-radius: 5px;">
+    <p id="errorText" th:text="${error}"></p>
+</div>
+
+				
+			</div>
+		</div>
+	</section>
+	
+	<footer class="footer">
+        <div class="container fooTer">
+            <p>&copy; <span id="year"></span> Adroit Corporate Services</p>
+        </div>
+    </footer>
+	 
+	<script th:src="@{/js/ie10-viewport-bug-workaround.js}"></script>
+	<script th:src="@{/js/login.js}"></script>
+	
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="#">
+  <title>H2H</title>
+  <link rel="shortcut icon" th:href="@{/H2H/image/logo-1408.png}" type="image/x-icon"> 
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/login.css}" rel="stylesheet">
+</head>
+<body>
+  <section>
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <img th:src="@{/image/Ad-H2H.png}"
+               alt="Ad-NACH (National Automated Clearing House)"
+               title="Ad-H2H (HOST TO HOST)" class="img-fluid" width="65%">
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="center-content">
+        <form class="form-signin" th:action="@{/login}" method="post">
+          <div class="mb-3">
+            <h2 class="form-signin-heading signinHeading text-center">Login</h2>
+            <label for="inputEmail" class="form-label signinHeading">Username</label>
+            <input type="text" id="inputEmail" name="username" class="form-control"
+                   placeholder="Username" required autofocus />
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label signinHeading">Password</label>
+            <input type="password" id="inputPassword" name="password"
+                   class="form-control" placeholder="Password" autocomplete="off" required />
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+          <!-- Inline error message below the button -->
+          <div class="text-danger text-center mt-3" id="errorMessage" th:if="${error != null}">
+            <p id="errorText" th:text="${error}"></p>
+          </div>
+		  <div class="text-center mt-3">
+		    <p id="errorText" th:if="${error != null}" th:text="${error}" class="error-message"></p>
+		    <p id="successText" th:if="${success != null}" th:text="${success}" class="success-message"></p>
+		  </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container fooTer">
+      <p>&copy; <span id="year"></span> Adroit Corporate Services</p>
+    </div>
+  </footer>
+
+  <script th:src="@{/js/ie10-viewport-bug-workaround.js}"></script>
+  <script th:src="@{/js/login.js}"></script>
+</body>
+</html>

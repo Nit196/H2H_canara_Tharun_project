@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="Base::layout(~{::section})">
+
+<head>
+<meta http-equiv="refresh" content="5">
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+<link rel="stylesheet" href="css/style.css" />
+
+<!--<link rel="stylesheet" type="text/css" th:href="@{/css/xmlcss.css}">-->
+</head>
+
+<body>
+
+	<section
+		class="banner d-flex justify-content-center align-items-center">
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+			</ul>
+		</div>
+		<div class="header header-flex col-md-10 col-md-offset-2">
+			<div></div>
+			<div class="header-dash">Dashboard</div>
+			<div></div>
+		</div>
+
+		<div class="container" id="container">
+			<div class="subcontainer">
+				<div class="refresh-section">
+					<button id="refreshbtn" class="btn btn-primary" >Refresh</button>
+				</div>
+				<div class="date-section">
+					<div class="date-labels">
+						<label for="startDate">From Date</label> <label for="endDate">To
+							Date</label> <label></label>
+					</div>
+					<div class="date-inputs">
+						<input type="date" id="startDate"> <input type="date"
+							id="endDate">
+						<button id="loadBtn" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="title">File Send To NPCI</div>
+			<table class="npci-table" border="1">
+				<colgroup>
+					<col class="col-25">
+					<col class="col-25">
+					<col class="col-25">
+					<col class="col-25">
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="prd_column">Product</th>
+						<th>INP</th>
+						<th>RTN</th>
+						<th>ACCEPT</th>
+					</tr>
+				</thead>
+				<tbody id="fileuploadSummaryTableBody">
+					<!-- Data rows inserted here -->
+				</tbody>
+			</table>
+
+
+			<!--<div class="title">File Received From NPCI</div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th class="prd_column">Product</th>
+                        <th>INW</th>
+                        <th>ACK</th>
+                        <th>RES</th>
+                    </tr>
+                </thead>
+                <tbody id="fileSummaryTableBody">
+                     Data rows inserted here 
+                </tbody>
+            </table>   -->
+
+			<div class="title">File Received From NPCI</div>
+			<table class="npci-table" border="1">
+				<colgroup>
+					<col class="col-25">
+					<col class="col-25">
+					<col class="col-25">
+					<col class="col-25">
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="prd_column">Product</th>
+						<th>INW</th>
+						<th>ACK</th>
+						<th>RES</th>
+					</tr>
+				</thead>
+				<tbody id="fileSummaryTableBody">
+					<!-- Data rows inserted here -->
+				</tbody>
+			</table>
+		</div>
+
+		<button id="scrollTopBtn" onclick="scrollToTop()" title="Go to top">↑</button>
+	</section>
+
+	<script th:src="@{js/xmljs.js}" type="text/javascript"></script>
+
+	</section>
+</body>

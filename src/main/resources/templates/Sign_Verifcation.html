@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title><title>Sign and Verification</title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<section class="banner d-flex justify-content-center align-items-center">
+	   
+	   <div style="margin-left: 300px; display: inline-block; ">
+    		<!--<div class="col-md-offset-2 col-md-10" >-->
+			  <form id="uploadForm" enctype="multipart/form-data">
+     			  <b> Upload For Encryption: </b><form><input type="file" name="files" id="fileInput" multiple>
+        			<button type="submit" id="Upload">Upload</button>
+   			</form>
+   			<div id="message"></div>
+		  
+		  <button type="submit" id="Upload" >Encrypt</button>
+   			
+   			
+   	 </div>	
+   		
+   	<div style="margin-left: 300px; display: inline-block; ">
+    		<!--<div class="col-md-offset-2 col-md-10" >-->
+			  <form id="uploadForm" enctype="multipart/form-data">
+     			  <b> Upload For Decryption: </b><form><input type="file" name="files" id="fileInput" multiple>
+        			<button type="submit" id="Upload">Upload</button>
+   			</form>
+   			<div id="message"></div>
+		  
+		  <button type="submit" id="Upload" >Decryption</button>
+   			
+   			
+   	 </div>	
+   	 		
+	</section>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

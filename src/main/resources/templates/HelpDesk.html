@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="Base::layout(~{::section})">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Help Desk</title>
+
+</head>
+
+<body>
+
+	<section
+		class="banner d-flex justify-content-center align-items-center">
+
+		<div class="col-md-offset-2 col-md-10">
+			<div class="panel panel-primary headerTop">
+				<div class="panel-heading twoCertificates">Contact US</div>
+			</div>
+		</div>
+
+		<div class="container col-md-offset-2 col-md-10">
+
+			<div class="col-md-6">
+				<h1>
+					Let's get you</br> some help!
+				</h1>
+				<h6>
+					Have any issue? <a href="/ShowPdf"  target="_blank" class="email-us">Read project document</a>.
+				</h6>
+				<div class="img-wrapper">
+					<!-- <img class="bgimg" src="/image/support.png" alt="Helpdesk"> -->
+					<img class="bgimg" th:src="@{/image/support.png}" alt="Helpdesk">
+				</div>
+			</div>
+
+
+			<div class="col-md-6">
+				<div class="recordsTables">
+					<div class="mandateRecords p-4">
+						<form id="helpForm" class="helpForms">
+							<div class="displymBottom">
+								<b> In case any difficulty related to H2H application,
+									kindly contact through the following modes. </b>
+							</div>
+
+							<div class="displayIcon">
+								<div class="displymBottom displaymRight">
+									<img src="image/icon/envelope-regular.svg" alt="">
+								</div>
+								<div>
+									<label for="list">Email Help Desk :- <a
+										href="mailto:support@adroitcorporate.com">support@adroitcorporate.com</a>
+									</label>
+								</div>
+							</div>
+
+
+							<div class="displayIcon">
+								<div class="displymBottom displaymRight">
+									<img src="image/icon/phone-solid.svg" alt="">
+								</div>
+								<div>
+									<label for="list">Help Desk :- <a
+										href="tel:+912242270400">+91-22-4227 0400</a>
+									</label>
+								</div>
+							</div>
+
+							<div class="displayIcon">
+								<div class="displymBottom displaymRight">
+									<img src="image/icon/envelope-regular.svg" alt="">
+								</div>
+								<div>
+									<label for="list">Email marketing :- <a
+										href="mailto:admarketing@adroitcorporate.com">admarketing@adroitcorporate.com</a>
+									</label>
+								</div>
+							</div>
+
+
+							<div class="displayIcon">
+								<div class="displymBottom displaymRight">
+									<img src="image/icon/clock-regular.svg" alt="">
+								</div>
+								<div>
+									<label for="list">Timing :- 10.00 AM to 7.00 PM </label>
+								</div>
+							</div>
+
+							<div class="displayIcon">
+								<div class="displymBottom displaymRight">
+									<img src="image/icon/earth-americas-solid.svg" alt="">
+								</div>
+								<div>
+									<label for="list">Web Site :- <a
+										href="https://www.adroitcorporate.com/" target="_blank">
+											Adroit Corporate Services</a>
+									</label>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
+
+
+
+
+

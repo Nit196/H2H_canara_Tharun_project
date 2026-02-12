@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  th:replace="Base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+
+<script type="text/javascript" src="/webH2H/js/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="/webH2H/js/webH2HPagination.js"></script>
+<script type="text/javascript" src="/webH2H/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/webH2H/js/zebra_datepicker.js"></script>
+<link rel="stylesheet" href="/webH2H/css/default.css" type="text/css">
+<script>
+    $(window).load(function () {
+        $('#datepickertest1').Zebra_DatePicker({
+            pair: $('#datepickertest2'),
+            format: 'd/m/Y'
+        });
+        $('#datepickertest2').Zebra_DatePicker({
+            format: 'd/m/Y'
+        });
+
+    });
+
+    function checkTextField() {
+
+        var a = document.getElementById("datepickertest1").value;
+        var b = document.getElementById("datepickertest2").value;
+        if (a != "") {
+
+            if (b == "")
+            {
+                alert("Please enter to date");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if (b != "") {
+
+            if (a == "")
+            {
+                alert("Please enter from date");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if (a === "" && b === "")
+        {
+            return true;
+        }
+    }
+</script>
+</head>
+
+<body>
+<section class="banner d-flex justify-content-center align-items-center">
+<div class="col-md-offset-2 col-md-10">
+    <div class="panel panel-primary">
+        <div class="panel-heading">NPCI Server Explorer</div></div></div>
+
+<div class="col-md-offset-2 col-md-10">
+   
+    <form action="/webH2H/NpciFileDetails" name="serverform">
+        <div class="well">
+            <div class="form-group form-inline col-md-5">
+                <div class="col-md-4"><label>Folder Name</label></div>
+                <div class="col-md-8">
+                    <select class="form-control" name="foldername" id="foldername" style="width:250px;">
+                        
+                    </select> 
+                </div>
+            </div>
+            <div class="form-group col-sm-3 ">
+                <input type="text" placeholder="From Date"id="datepickertest1" value="<%=fromdate%>"  name="fromdate" class="datepicker form-control"  >
+            </div>
+            <div class="form-group col-sm-3">
+                <input type="text"  placeholder="To Date" id="datepickertest2" value="<%=todate%>" name="todate" class="datepicker form-control" >
+            </div>
+            <div class="col-md-1">
+                <input type="submit" value="Search" onclick="return checkTextField()" name="search" class="btn btn-primary btn-sm" />
+            </div>
+            <div class="container">
+                <div class="col-md-4">
+                    <input type="text" name="filename" value="<%=filename%>" placeholder="File Name" class="form-control" style="width:108%;"  />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-md-offset-2 col-md-10"> 
+    
+        <div class="pull-right" id="selector">
+    </div> 
+ 
+</div>
+
+</section>
+</body>
+</html>
+
+
+

@@ -1,0 +1,95 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Certificates</title>
+</head>
+
+<body>
+	<section class="banner d-flex justify-content-center align-items-center">
+
+<div class="col-md-offset-2 col-md-10" >
+	 <h1 > This is the Certifiate Page</h1>
+</div>	 
+
+										<!--For Bank-->
+										<h1> Bank Certificate</h1>
+									<table class=" table table-bordered table-condensed table-striped">
+										<thead>
+											<tr>
+												<th class="bg-lblue">Certificate</th>
+												<th class="bg-lblue">Details</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Type</td>
+												<td th:text="${Type_Bank}"></td>
+
+											</tr>
+
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Issuer</td>
+												<td th:text="${Issuer_Bank}"></td>
+
+											</tr>
+
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Valid from</td>
+												<td th:text="${Valid_from_Bank}"> </td>
+
+												
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Valid until</td>
+												<td th:text="${ Valid_until_Bank }">
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									
+									<!--For NPCI-->
+									<h1> NPCI Certificate</h1>
+								<table class=" table table-bordered table-condensed table-striped">
+										<thead>
+											<tr>
+												<th class="bg-lblue">Certificate</th>
+												<th class="bg-lblue">Details</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Type</td>
+												<td th:text="${Type_Npci}"></td>
+
+											</tr>
+
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Issuer</td>
+												<td th:text="${Issuer_Npci}"></td>
+
+											</tr>
+
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Valid from</td>
+												<td th:text="${Valid_from_Npci}"> </td>
+
+												
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Valid until</td>
+												<td th:text="${ Valid_until_Npci }">
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+</section>
+</body>
+</html>

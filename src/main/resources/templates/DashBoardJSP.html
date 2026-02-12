@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+	<meta http-equiv="refresh" content="5">
+	<meta charset="ISO-8859-1">
+	<title>Home Page</title>
+	
+</head>
+
+<body>
+
+	<section class="banner d-flex justify-content-center align-items-center">
+		<!-- <div class="col-md-offset-2 col-md-10 headerTop">
+			<div class="panel panel-primary">
+				<div class="panel-heading" th:else>Dashboard </div>
+				
+			</div>
+		</div> -->
+		
+		
+		
+		
+		
+		
+		<div class="col-md-offset-2 col-md-10 headerTop">
+    		<div class="panel panel-primary align-items-center">
+    		
+    		<div class=" panel-heading titleDashboard">
+    		
+    			<div class="panel-heading">Dashboard</div>
+    			
+        	<!-- 	<div class="titleDashboard">
+            		<input type="date" class="form-control dateBtn">
+            		<button type="submit" class="btn btn-primary">Submit</button>
+            	
+            	 <p> <span th:text="${session.username}"></span></p> 
+            	 
+        		</div> -->
+        		
+    		</div>
+        		
+    		</div>
+		</div>
+		
+		<div class="col-md-10 col-md-offset-2">
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading  text-center panel-bank">Bank Folders</div>
+					<div class="panel-body">
+
+						<!--Upload folder done-->
+						<div class="col-md-4">
+							<div class="col-md-12">
+								<div class="panel panel-primary panel-secondary">
+
+									<div class="panel-heading panel-mini text-center pannelBackground" >Upload Folders</div>
+
+									<table class=" table table-bordered table-condensed table-striped">
+										<thead>
+											<tr>
+												<th class="bg-lblue">Folders</th>
+												<th class="singleLine">File Count</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Source</td>
+												<td th:text="${upload_source_path1}"></td>
+
+											</tr>
+
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Signed</td>
+												<td th:text="${upload_source_Signed}"></td>
+
+											</tr>
+
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Archived</td>
+												<td th:text="${upload_source_Archive}">
+
+												</td>
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Error</td>
+												<td th:text="${ upload_source_Error }">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+
+						<!--ACK Files-->
+						<div class="col-md-4">
+							<div class="col-md-12">
+								<div class="panel panel-primary panel-secondary">
+									<div class="panel-heading panel-mini text-center pannelBackground">ACK Files</div>
+
+									<table class=" table table-bordered table-condensed table-striped ">
+
+										<thead>
+											<tr>
+												<th>Folders</th>
+												<th class="singleLine">File Count</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Source</td>
+												<td th:text="${ Inbox_source_path }">
+												</td>
+											</tr>
+											<tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Archived</td>
+												<td th:text="${ Inbox_source_Archive }">
+												</td>
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Error</td>
+												<td th:text="${ Inbox_source_Errors }">
+												</td>
+											</tr>
+
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Verified</td>
+												<td th:text="${ Inbox_source_Verified }">
+												</td>
+											</tr>
+										</tbody>
+
+									</table>
+
+								</div>
+							</div>
+						</div>
+						
+						<!--RES and INW Files-->
+						<div class="col-md-4">
+							<div class="col-md-12">
+								<div class="panel panel-primary panel-secondary">
+									<div class="panel-heading panel-mini text-center pannelBackground">RES and INW Files
+									</div>
+									<table class="table table-bordered table-condensed table-striped">
+										<thead>
+											<tr>
+												<th>Folders</th>
+												<th class="singleLine">File Count</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Source</td>
+												<td th:text="${ Bankcode_source_path }">
+												</td>
+											</tr>
+											<tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Error</td>
+												<td th:text="${ Bankcode_source_Errors }">
+												</td>
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Verified</td>
+												<td th:text="${ Bankcode_source_Verified }">
+												</td>
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Verified</td>
+												<td th:text="${ Bankcode_source_Verified }">
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- 2nd row -->
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading text-center panel-bank">NPCI Folders</div>
+					<div class="panel-body">
+						<!--NPCI Server-->
+						<div class="col-md-4">
+							<div class="col-md-12">
+								<div class="panel panel-primary panel-secondary">
+									<div class="panel-heading text-center panel-bank pannelBackground">NPCI Server</div>
+									<table class="table table-bordered table-condensed table-striped ">
+										<thead>
+											<tr>
+												<th>Folders</th>
+												<th class="singleLine">File Count</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Root</td>
+												<td th:text="${Root_count}"></td>
+			
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Inbox</td>
+												<td th:text="${Inbox_count}">></td>
+											</tr>
+											<tr>
+												<td><i class="fa fa-folder"></i>&nbsp;Bank</td>
+												<td th:text="${Bank_count}">></td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							
+							
+							
+							
+							
+							
+							
+							
+							<!--<div class="col-md-12">
+							  <div class="panel panel-primary panel-secondary">
+							    <div class="panel-heading text-center panel-bank pannelBackground">Accept & Reject File</div>
+							    <canvas id="candlestickChart" width="400" height="300"></canvas>
+							  </div>
+							</div>
+-->
+							
+						<!--	<div class="col-md-12">
+							  <div class="panel panel-primary panel-secondary">
+							    <div class="panel-heading text-center panel-bank pannelBackground">Accept & Reject File</div>
+							    <canvas id="candlestickChart" width="400" height="300"></canvas>
+							  </div>
+							</div>-->
+							<!--<div class="col-md-12">
+								 <div class="panel panel-primary panel-secondary">
+									<div class="panel-heading text-center panel-bank pannelBackground">Accept & Reject File</div>
+									<canvas id="doughnutChart" width="185" height="185"></canvas>
+								</div> -->
+								
+							<!--	 <div class="panel panel-primary panel-secondary">
+        							<div class="panel-heading text-center panel-bank pannelBackground">Accept & Reject File</div>
+        							<canvas id="doughnutChart" width="185" height="185"></canvas>
+    							</div> -->
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	<script th:src="@{/js/tobase.js}" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
+	
+	
+	
+	
+	
+	</section>
+	
+</body>

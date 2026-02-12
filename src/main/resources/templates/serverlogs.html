@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Logs</title>
+    <style>
+        /* Optional: Custom pagination styling (works even without Bootstrap) */
+        .pagination {
+            display: inline-block;
+            list-style: none;
+            padding: 0;
+        }
+        .pagination li {
+            display: inline;
+            margin: 0 5px;
+        }
+        .pagination li.active a {
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .pagination a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .pagination-container {
+            margin-top: 20px;
+        }
+        .severlogBG {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<section class="banner d-flex justify-content-center align-items-center">
+    <div class="col-md-offset-2 col-md-10 headerTop">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Server Logs</div>
+        </div>
+    </div>
+
+    <div class="col-md-offset-2 col-md-10">
+        <div class="row"></div>
+    </div>
+
+    <div class="col-md-10 col-md-offset-2">
+        <div class="pull-right" id="selector"></div>
+        <div class="table-responsive fixed-table-container severlogBG">
+            <table class="table table-bordered table-condensed fixed-table">
+                <thead>
+                    <tr class="info">
+                        <th class="text-center">File Name</th>
+                        <th class="text-center">Size</th>
+                        <th class="text-center">Modified Date</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="fileDetails : ${files_info}">
+                        <td th:text="${fileDetails['fileName']}"></td>
+                        <td th:text="${fileDetails['fileSize']}"></td>
+                        <td th:text="${#dates.format(new java.util.Date(fileDetails['modificationDate']), 'yyyy-MM-dd HH:mm:ss')}"></td>
+                        <td>
+                            <button class="btn btn-primary btn-sm downloadfile_log"
+                                    th:attr="name=${fileDetails['fileName']}">
+                                Download
+                            </button>
+
+                           <!--  <form action="DeleteServerLog" method="post" style="display:inline;">
+                                <input type="hidden" name="fileName" th:value="${fileDetails['fileName']}" />
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form> -->
+                        </td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(files_info)}">
+                        <td colspan="4" class="text-center text-muted">No log files found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Block -->
+        <div class="pagination-container text-center">
+            <ul class="pagination">
+                <!-- Previous Button -->
+                <li th:if="${currentPage > 1}">
+                    <a th:href="@{/serverlogs(page=${currentPage - 1})}">&laquo; Prev</a>
+                </li>
+
+                <!-- Page Numbers -->
+                <li th:each="i : ${#numbers.sequence(1, totalPages)}"
+                    th:classappend="${i == currentPage} ? 'active'">
+                    <a th:href="@{/serverlogs(page=${i})}" th:text="${i}"></a>
+                </li>
+
+                <!-- Next Button -->
+                <li th:if="${currentPage < totalPages}">
+                    <a th:href="@{/serverlogs(page=${currentPage + 1})}">Next &raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>

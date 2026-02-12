@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate page</title>
+    
+</head>
+
+<body>
+	
+	<section class="banner d-flex justify-content-center align-items-center">
+	
+	<div class="col-md-offset-2 col-md-10">
+		<div class="panel panel-primary headerTop">
+			<div class="panel-heading twoCertificates">Certificates Zone</div>
+		</div>
+	</div>
+        <div class="twoCertificates col-md-offset-2 col-md-10 headerTop ">
+			<div class="well disPlay">
+	            <!-- 1st Certificate -->
+	            <div class="certificates ">
+	                <div class="title" id="modifiedDate">NPCI Certificate</div>
+	                <div class="col">
+	                    <div class="card">
+	                        <div class="card-body ">
+	                            <div class="certificates certiFicate">
+	                                <div class="d-flex gap-2">
+	                                    <img th:src="@{/image/certificate.png}" alt="Certification Image" width="30" height="30">
+	                                   <b> Certificate Information </b>
+	                                </div>
+	                                <hr class="border-border-second mb-3">
+	                                <div class="mb-5">
+	                                   <b> All the Intendedpurpose of this certificate could not be verified. </b>
+	                                </div>
+	                                <hr class="border-border-second mb-3">
+	                                <div class="mb-3">
+	                                    <b>Issued to :</b> <h5 th:text="${Issuer_Npci}"></h5>
+	                                </div>
+	                                <!--<div class="mb-3">
+	                                    <b>Issued by :</b> <h4 th:text="${Valid_from_Npci}"></h4>
+	                                </div>-->
+	                                <div class="mb-3">
+	                                    <b>Valid From :</b> <span th:text="${Valid_from_Npci}" class="validTo"> </span> <b>To</b> <span th:text="${ Valid_until_Npci }" class="validTo"> </span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+
+	            <!-- 2nd Certificate -->
+	            <div class="certificates">
+	                <div class="title" id="modifiedDate">Bank Certificate</div>
+	                <div class="col">
+	                    <div class="card">
+	                        <div class="card-body">
+	                            <div class="certificates certiFicate">
+	                                <div class="d-flex gap-2">
+	                                    <img th:src="@{/image/certificate.png}" alt="Certification Image" width="30" height="30">
+	                                    <b> Certificate Information </b>
+	                                </div>
+	                                <hr class="border-border-second mb-3">
+	                                <div class="mb-5">
+	                                   <b> All the Intendedpurpose of this certificate could not be verified. </b>
+	                                </div>
+	                                <hr class="border-border-second mb-3">
+	                                <div class="mb-3">
+	                                    <b>Issued to :</b><h5 th:text="${Issuer_Bank}"></h5>
+	                                </div>
+	                                <!--<div class="mb-3">
+	                                    <b>Issued by :</b> <h4 th:text="${Valid_from_Npci}"></h4>
+	                                </div>-->
+	                                
+	                                <div class="mb-3">
+	                                    <b>VAlid From :</b>  <span th:text="${Valid_from_Bank}" class="validTo">  </span> <b>To</b> <span th:text="${Valid_until_Bank}" class="validTo"> </span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+            </div>
+        </div>
+   
+	</section>    
+</body>
+
+</html>
+
+

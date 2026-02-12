@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Wise File</title>
+
+</head>
+
+<body>
+
+	
+	<section class="banner d-flex justify-content-center align-items-center headerTop">
+	<div class="col-md-offset-2 col-md-10">
+		<div class="panel panel-primary headerTop">
+			<div class="panel-heading twoCertificates">Day Wise File</div>
+		</div>
+	</div>
+	
+	
+    <div class="recordsTables twoCertificates col-md-offset-2 col-md-10 wr">
+        <div class="certificates custom-table">
+           <!--  <div class="col"> -->
+                <div class="card custom-card">
+                    <div class="cardBody">
+                        <h4 class="card-title">File Details</h4>
+                        <div class="custom-table-container">
+
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>File Name</th>
+                                        <th>File Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+								    <tr th:each="entry : ${FileStatus}">
+								        <td th:text="${entry.key}"></td>
+								       <!-- <td th:text="${entry.value}"></td>-->
+								       <td th:text="${entry.value}" th:class="${entry.value == 'ACCP' ? 'green' : 'red'}"></td>
+
+								     </tr>	
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="certificates custom-table">
+                <div class="card custom-card">
+                    <div class="cardBody">
+                        <h4 class="card-title">Uploaded Files</h4>
+                        <div class="custom-table-container">
+
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Upload File Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                         <tr th:each="upload_file_:${upload_file}">
+									        <td th:text="${upload_file_}"></td>
+									     </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</section>
+</body>
+
+</html>

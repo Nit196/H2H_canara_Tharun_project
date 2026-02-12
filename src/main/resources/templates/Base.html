@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(content)">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" th:href="@{/image/logo-1408.png}"
+	type="image/x-icon">
+<link rel="icon" href="#">
+<title>H2H</title>
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/dashboard.css}" rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/searchDelete.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/exportNPCIfilelist.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/certificate.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/Day_Wise_File.css}">
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/xmlcss.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/manualSignencryption.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/serverLog.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/helpdesk.css}">
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"
+	type="text/css" />
+<script th:src="@{/js/jquery-2.1.4.js}" type="text/javascript"></script>
+<script th:src="@{/js/tobase.js}" type="text/javascript"></script>
+<link th:href="@{/css/simplePagination.css}" type="text/css"
+	rel="stylesheet" />
+<script th:src="@{/js/chart.js}" type="text/javascript"></script>
+<script th:src="@{js/xmljs.js}" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+	<!-- <nav class="navbar navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand"><img th:src="@{/image/Ad-H2H.png}"
+					alt="Ad-H2H" width="125px" /></a>
+				
+			</div>
+			
+	
+				<div id="expiry">Test</div>
+		
+			
+			<div id="navbar" class="navbar-collapse collapse">
+				<div class="pull-right">
+					<br> <a th:href="@{/logout}" class="btn btn-primary btn-sm"
+						role="button"><span class="fa fa-power-off"></span>&nbsp;Logout</a>
+				</div>
+			</div>
+		</div>
+	</nav> -->
+
+
+	<nav class="navbar navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand pull-right"><img
+					th:src="@{image/Ad-H2H.png}" alt="Ad-H2H" width="125px" /></a>
+
+			</div>
+
+			<!-- logout button old code -->
+			<!-- <div id="navbar" class="navbar-collapse collapse">
+            <div id="expiry" class="navbar-text">Expiry Days</div>
+            <ul class="nav navbar-right">
+                <li>
+                	<a th:href="@{/logout}" class="btn btn-primary logoutBtn btn-sm"
+                     role="button"><span class="fa fa-power-off"></span>&nbsp;Logout</a>
+                </li>
+            </ul>
+        </div> -->
+			<!-- end -->
+
+			<!--  Username and logout dropdown new code 30-05-2024 -->
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<!--    <div id="expiry" class="navbar-text"></div> -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<!--   <a href="#" class="dropdown-toggle btn btn-primary btn-sm logoutIcon" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-user"></span>&nbsp;<span th:text="${session.username}"></span> <span class="caret"></span>
+                        </a> --> <a href="/H2H/logout"
+						class="dropdown-toggle btn btn-primary btn-sm logoutIcon"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false"> <span class="fa fa-user"></span>&nbsp;<span
+							th:text="${session.username}"></span> <span class="caret"></span>
+					</a> <!-- <ul class="dropdown-menu">
+                            <li> <a th:href="@{/logout}"><span class="fa fa-power-off"></span>&nbsp;Logout</a></li>
+                        </ul>-->
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="col-md-2 sidebar bg-success" id="containerId">
+
+		<ul class="nav nav-sidebar" id="1">
+
+			<li class=""><a th:href="@{/dashboard1}"><i
+					class="fa fa-dashboard"></i> Dashboard</a></li>
+			<!--<li class=""><a th:href="@{/fileprocess}"><i class="fa fa-download"></i> File Processing Status</a></li>-->
+			<li class=""><a th:href="@{/Configurations}"><i
+					class="fa fa-gears"> </i> Configuration</a></li>
+			<li class=""><a th:href="@{/SearchDelete}"><i
+					class="fa fa-list-alt"> </i> Search Delete</a></li>
+			<li class=""><a th:href="@{/show_files}"><i
+					class="fa fa-dashboard"></i> Upload / Download File</a></li>
+			<li class=""><a th:href="@{/NpciRootData}"><i
+					class="fa fa-download"></i>NPCI Portal Files</a></li>
+			<li class=""><a th:href="@{/ReadCertificate}"><i
+					class="fa fa-certificate"></i> Certificate Zone</a></li>
+			<!-- <li class=""><a th:href="@{/Day_Wise_File}"><i class="fa fa-file"></i> Today Status</a></li>-->
+			<li class=""><a th:href="@{/serverlogs}"><i
+					class="fa fa-server"></i> Application Logs</a></li>
+			<li class=""><a th:href="@{/HelpDesk}"><i
+					class="fa fa-phone"></i> Help Desk</a></li>
+
+		</ul>
+	</div>
+	<div th:replace="${content}"></div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Administration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+	
+	<section class="banner d-flex justify-content-center align-items-center col-md-offset-2 col-md-10">
+		<div class="col-md-offset-0">
+			<div class="panel panel-primary" style="margin-top: 15px;">
+				<div class="panel-heading">Admin</div>
+			</div>
+		</div>
+   <form id="userForm" th:action="@{/adminpage}" method="post">     
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"   th:name="username" th:required="required">
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" th:name="password" th:required="required">
+    
+    <button type="submit" onclick="createUser()" >Create User</button>
+    <!-- <button type="button" onclick="createUser()">Create User</button>-->
+</form>
+
+
+    <script>
+        function createUser() {
+            // You can add JavaScript code here to handle form submission and user creation.
+            // For simplicity, you can use alert to show the entered values.
+          
+
+            alert("User credentials Created");
+        }
+    </script>
+
+</body>
+</section>
+</html>
